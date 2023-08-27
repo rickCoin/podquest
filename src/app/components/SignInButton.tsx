@@ -9,17 +9,19 @@ interface ButtonProps {
 
 const SignInButton: React.FC<ButtonProps> = ({ text, onClick }) => {
     return (
-        <div>
+        <div className="mx-24 my-12 md:mx-40 md:my-40">
             <button
                 onClick={onClick}
-                className="flex items-center justify-center text-2xl bg-dark text-highlight1 w-48 h-16 ml-40 mt-40 rounded-xl font-bold
+                className="text-sm w-24 h-8  md:text-2xl md:w-48 md:h-16 flex items-center justify-center bg-dark text-highlight1 rounded-xl font-bold
                  hover:text-primary"
             >
-                {text}
-                <FontAwesomeIcon
-                    icon={faArrowRightToBracket}
-                    className="ml-4 w-8 h-8"
-                />
+                <div className="flex gap-2 md:gap-4 items-center">
+                    {text}
+                    <FontAwesomeIcon
+                        icon={faArrowRightToBracket}
+                        className="w-4 h-4 md:w-8 md:h-8"
+                    />
+                </div>
             </button>
         </div>
     );

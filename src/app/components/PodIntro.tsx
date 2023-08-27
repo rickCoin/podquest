@@ -20,7 +20,7 @@ const PodIntro: React.FC<IntroProps> = ({ title, description }) => {
                     {description}
                 </p>
                 <div className="my-4 md:my-8 text-base md:text-xl text-secondary text-left">
-                    <p>Collected episodes :</p>
+                    <p className="font-bold">Collected episodes :</p>
                     <p>
                         - The Molecular Love Story That Could Help Power the
                         World

@@ -3,7 +3,7 @@ export const HERO_SECTION_TEXT = {
         A tool to make searching podcast content easier.
     `,
     DESCRIPTION: `
-        PodQuest allows you to ask questions based on podcast content and provides you with the answers.
+        PodQuest can answer question based on the Podcast content you choose.
     `,
 };
 
