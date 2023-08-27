@@ -15,13 +15,15 @@ const InputBox: React.FC = () => {
         setLoading(true);
         // Handle the inputValue (e.g., send to an API, display on the page, etc.)
         console.log(inputValue);
-        const result = await qaChatAPI(inputValue);
-        console.log(result);
-        setAns(result.ans);
-        setSource(result.source);
+        if (inputValue) {
+            const result = await qaChatAPI(inputValue);
+            console.log(result);
+            setAns(result.ans);
+            setSource(result.source);
+            console.log("result.ans: ", result.ans);
+            console.log("result.source: ", result.source);
+        }
 
-        console.log("result.ans: ", result.ans);
-        console.log("result.source: ", result.source);
         // setAns(inputValue);
         // setAns(result);
         // Optionally reset the inputValue after sending
