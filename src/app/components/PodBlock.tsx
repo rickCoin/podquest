@@ -12,7 +12,7 @@ const PodBlock: React.FC<PodBlockProps> = ({ onClick, label, image_url }) => {
         <div>
             <button
                 onClick={onClick}
-                className="text-2xl bg-white w-40 h-40  mt-20 mb-20 rounded-xl font-bold
+                className="text-sm bg-white w-16 h-16 my-4 md:text-2xl md:w-40 md:h-40 md:my-20 rounded-xl font-bold
                  hover:text-primary"
             >
                 {label && label}

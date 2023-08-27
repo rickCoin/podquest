@@ -18,7 +18,7 @@ export default function Main() {
         <div className="bg-dark min-h-screen overflow-auto">
             {/* podcast icons */}
             <div
-                className="flex gap-20 mx-40 overflow-y-auto
+                className="flex gap-8 mx-8 md:mx-40 overflow-y-auto
                              scrollbar-none scrollbar-thumb-highlight1 scrollbar-track-highlight"
             >
                 <PodBlock
@@ -54,7 +54,7 @@ export default function Main() {
                 />
             </div>
 
-            <div className="mx-40 my-20">
+            <div className="my-4 mx-8 md:my-20 md:mx-40">
                 <InputBox />
             </div>
         </div>

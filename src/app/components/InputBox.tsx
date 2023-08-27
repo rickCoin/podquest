@@ -33,12 +33,13 @@ const InputBox: React.FC = () => {
         <div>
             <form
                 onSubmit={handleSubmit}
-                className="border-2 border-highlight1 rounded-xl px-8 py-8"
+                className="px-4 py-4 md:px-8 md:py-8 border-2 border-highlight1 rounded-xl "
             >
                 {/* Response message is here */}
                 <div
-                    className="text-highlight1 h-64 text-xl flex flex-col justify-between
-                 overflow-auto scrollbar-thin scrollbar-thumb-highlight1 scrollbar-track-highlight"
+                    className="h-64 text-base md:text-xl text-highlight1 
+                               flex flex-col justify-between overflow-auto
+                               scrollbar-thin scrollbar-thumb-highlight1 scrollbar-track-highlight"
                 >
                     <p>{ans}</p>
                     {source.length !== 0 && (

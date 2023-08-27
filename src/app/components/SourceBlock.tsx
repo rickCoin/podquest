@@ -24,7 +24,7 @@ const SourceBlock: React.FC<SourceBlockProps> = ({
         <div>
             <button
                 onClick={handleRedirect}
-                className="text-2xl bg-primary w-12 h-12 rounded-full font-bold
+                className="text-base w-8 h-8 md:text-xl md:w-12 md:h-12  bg-primary rounded-full font-bold
                  hover:text-primary"
                 title={info}
             >
