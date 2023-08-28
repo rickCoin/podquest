@@ -29,6 +29,7 @@ export default function Home() {
     };
     return (
         <div className="bg-primary min-h-screen flex flex-col">
+            <title>PodQuest</title>
             <HeroSection
                 title={HERO_SECTION_TEXT.ONE_LINER}
                 description={HERO_SECTION_TEXT.DESCRIPTION}

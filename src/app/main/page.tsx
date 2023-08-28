@@ -35,6 +35,8 @@ export default function Main() {
 
     return (
         <div className="bg-dark min-h-screen overflow-auto">
+            <title>PodQuest</title>
+
             <Header />
             {/* podcast icons */}
             <div
