@@ -7,6 +7,7 @@ import PodIntro from "../components/PodIntro";
 import { POD_INTRO_TEXT } from "../constant";
 import { auth } from "../firebase/config";
 import { useRouter } from "next/navigation";
+import Header from "../components/Header";
 
 // for indentation
 function dedent(str: string): string {
@@ -34,6 +35,7 @@ export default function Main() {
 
     return (
         <div className="bg-dark min-h-screen overflow-auto">
+            <Header />
             {/* podcast icons */}
             <div
                 className="flex gap-8 mx-8 md:mx-40 overflow-y-auto
@@ -48,7 +50,6 @@ export default function Main() {
                 <PodBlock
                     label="Coming Soon"
                     onClick={() => {
-                        router.push("/");
                         console.log("PodBlock clicked");
                     }}
                 />
