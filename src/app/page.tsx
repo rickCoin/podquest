@@ -10,6 +10,7 @@ import { auth } from "./firebase/config";
 export default function Home() {
     const router = useRouter();
     const googleProvider = new GoogleAuthProvider();
+
     const handleGoogleLogin = async () => {
         try {
             const result = await signInWithPopup(auth, googleProvider);

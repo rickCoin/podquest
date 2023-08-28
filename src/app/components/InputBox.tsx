@@ -68,7 +68,7 @@ const InputBox: React.FC = () => {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}
                         className="bg-transparent border-2 border-highlight1 rounded-xl p-2 w-full"
-                        placeholder="Ask here..."
+                        placeholder="ex: how to get viral on internet?"
                     />
                     {loading ? <LoadingIcon size="2x" /> : <SendButton />}
                 </div>

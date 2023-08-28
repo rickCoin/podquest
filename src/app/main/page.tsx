@@ -2,7 +2,10 @@
 import InputBox from "../components/InputBox";
 import PodBlock from "../components/PodBlock";
 import PodIntro from "../components/PodIntro";
+
 import { POD_INTRO_TEXT } from "../constant";
+import { auth } from "../firebase/config";
+import { useRouter } from "next/navigation";
 
 // for indentation
 function dedent(str: string): string {
@@ -14,6 +17,17 @@ function dedent(str: string): string {
 }
 
 export default function Main() {
+    const router = useRouter();
+    auth.onAuthStateChanged((user) => {
+        if (user) {
+            // User is signed in.
+            console.log("User is signed in with uid:", user.uid);
+        } else {
+            // No user is signed in or the state is not yet determined.
+            router.push("/");
+            console.log("No user is signed in or checking user state.");
+        }
+    });
     return (
         <div className="bg-dark min-h-screen overflow-auto">
             {/* podcast icons */}
