@@ -1,4 +1,5 @@
 "use client"; // TODO: learning CSR and SSR
+import { useEffect } from "react";
 import InputBox from "../components/InputBox";
 import PodBlock from "../components/PodBlock";
 import PodIntro from "../components/PodIntro";
@@ -18,16 +19,19 @@ function dedent(str: string): string {
 
 export default function Main() {
     const router = useRouter();
-    auth.onAuthStateChanged((user) => {
-        if (user) {
-            // User is signed in.
-            console.log("User is signed in with uid:", user.uid);
-        } else {
-            // No user is signed in or the state is not yet determined.
-            router.push("/");
-            console.log("No user is signed in or checking user state.");
-        }
-    });
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                // User is signed in.
+                console.log("User is signed in with uid:", user.uid);
+            } else {
+                // No user is signed in or the state is not yet determined.
+                console.log("No user is signed in or checking user state.");
+                router.push("/");
+            }
+        });
+    }, [router]);
+
     return (
         <div className="bg-dark min-h-screen overflow-auto">
             {/* podcast icons */}
@@ -44,6 +48,7 @@ export default function Main() {
                 <PodBlock
                     label="Coming Soon"
                     onClick={() => {
+                        router.push("/");
                         console.log("PodBlock clicked");
                     }}
                 />
