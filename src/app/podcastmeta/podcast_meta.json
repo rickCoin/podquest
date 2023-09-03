@@ -1,0 +1,64 @@
+{
+    "ted_talk_daily": {
+        "name": "TED Talks Daily",
+        "intro": "TED Talks Daily is a podcast produced by TED, offering insightful talks from the world's leading thinkers and creators. Covering a range of topics from science to art, it aims to educate and inspire listeners daily. The podcast provides a convenient way to access the renowned content from the TED stage on the go.",
+        "episodes": [
+            {
+                "id": 1,
+                "title": "The Molecular Love Story That Could Help Power the World"
+            },
+            {
+                "id": 2,
+                "title": "How to Meet Your Child's Difficult Behavior with Compassion"
+            },
+            {
+                "id": 3,
+                "title": "The Climate Crisis Is Expensive – Here’s Who Should Pay for It"
+            },
+            {
+                "id": 4,
+                "title": "Why Real Change Is About More Than Just Going Viral"
+            },
+            {
+                "id": 5,
+                "title": "A Mysterious Design That Appears Across Millennia"
+            }
+        ],
+        "questions": [
+            "What significant change in TikTok users occurred in 2020?",
+            "What role does the green electron play in addressing climate change?",
+            "how can industries scale up breakthrough technologies to contribute to a more sustainable future?"
+        ]
+    },
+    "not_just_design": {
+        "name": "Not Just Design",
+        "intro": "A podcast discussion featuring African creative minds, sharing their stories, knowledge, insights into how they think, and unique experiences on their path to achieving greatness. The goal is to provide inspiration and valuable lessons, contributing to the collective journey of personal and creative growth for both you and I (Drounz) on our not just design journey.",
+        "episodes": [
+            {
+                "id": 1,
+                "title": "Ep18 (part 1): the inside of a 3yrs design career with Caveman"
+            },
+            {
+                "id": 2,
+                "title": "Ep16: how to go about Design negotiation"
+            },
+            {
+                "id": 3,
+                "title": "Ep14: How to manage your time as a UI/UX designer with a Family"
+            },
+            {
+                "id": 4,
+                "title": "Ep13: Sometimes reading has to pause first, why are Ux books Instructional"
+            },
+            {
+                "id": 5,
+                "title": "Ep11: How to make Organic Networking with designers with #Wages of sin"
+            }
+        ],
+        "questions": [
+            "WHow to manage your time as a UI/UX designer?",
+            "why are Ux books Instructional?",
+            "how to go about Design negotiation?"
+        ]
+    }
+}

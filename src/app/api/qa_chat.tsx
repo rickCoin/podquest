@@ -12,13 +12,17 @@ interface Source {
 const URL = process.env.NEXT_PUBLIC_API_URL;
 const END_POINT = "/qa_chat";
 
-async function qaChatAPI(question: string): Promise<ApiResponse> {
+async function qaChatAPI(
+    question: string,
+    selectedPod: string
+): Promise<ApiResponse> {
     console.log("qaChatAPI:");
 
     console.log("question: ", question);
     const apiUrl: string = URL + END_POINT;
     const apiInput: object = {
         question: question,
+        selected_podcast: selectedPod,
     };
     try {
         const response = await axios.post(apiUrl, apiInput);
@@ -31,4 +35,4 @@ async function qaChatAPI(question: string): Promise<ApiResponse> {
 }
 
 export { qaChatAPI };
-export type { Source };
+export type { Source, ApiResponse };

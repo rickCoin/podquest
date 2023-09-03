@@ -1,28 +1,22 @@
 "use client"; // TODO: learning CSR and SSR
-import { useEffect } from "react";
-import InputBox from "../components/InputBox";
+import { use, useEffect, useState } from "react";
 import PodBlock from "../components/PodBlock";
 import PodIntro from "../components/PodIntro";
+import ChatInterface from "../components/ChatInterface";
 
-import { POD_INTRO_TEXT } from "../constant";
 import { auth } from "../firebase/config";
 import { useRouter } from "next/navigation";
 import Header from "../components/Header";
-
-// for indentation
-function dedent(str: string): string {
-    const match = str.match(/^[ \t]*(?=\S)/gm);
-    if (!match) return str;
-    const indent = Math.min(...match.map((el) => el.length));
-    const re = new RegExp(`^[ \\t]{${indent}}`, "gm");
-    return indent > 0 ? str.replace(re, "") : str;
-}
-
+import { User } from "firebase/auth";
+import { PODCAST_LIST } from "../constant";
 export default function Main() {
     const router = useRouter();
+    const [user, setUser] = useState<User>();
+    const [podcast, setPodcast] = useState(PODCAST_LIST.TED_TALK_DAILY);
     useEffect(() => {
         auth.onAuthStateChanged((user) => {
             if (user) {
+                setUser(user);
                 // User is signed in.
                 console.log("User is signed in with uid:", user.uid);
             } else {
@@ -37,7 +31,7 @@ export default function Main() {
         <div className="bg-dark min-h-screen overflow-auto">
             <title>PodQuest</title>
 
-            <Header />
+            <Header user={user} />
             {/* podcast icons */}
             <div
                 className="flex gap-8 mx-8 md:mx-40 overflow-y-auto
@@ -46,13 +40,19 @@ export default function Main() {
                 <PodBlock
                     image_url="/ted_talks_daily.png"
                     onClick={() => {
-                        console.log("PodBlock clicked");
+                        console.log(
+                            `select clicked: ${PODCAST_LIST.TED_TALK_DAILY}`
+                        );
+                        setPodcast(PODCAST_LIST.TED_TALK_DAILY);
                     }}
                 />
                 <PodBlock
-                    label="Coming Soon"
+                    image_url="/not_just_design_icon.png"
                     onClick={() => {
-                        console.log("PodBlock clicked");
+                        console.log(
+                            `select clicked: ${PODCAST_LIST.NOT_JUST_DESIGN}`
+                        );
+                        setPodcast(PODCAST_LIST.NOT_JUST_DESIGN);
                     }}
                 />
                 <PodBlock
@@ -69,15 +69,11 @@ export default function Main() {
                 />
             </div>
             {/* podcast intro */}
-            <div className="bg-primary">
-                <PodIntro
-                    title={dedent(POD_INTRO_TEXT.HEADER)}
-                    description={dedent(POD_INTRO_TEXT.DESCRIPTION)}
-                />
+            <div className="mx-8 md:mx-40">
+                <PodIntro selectedPodcast={podcast} />
             </div>
-
-            <div className="my-4 mx-8 md:my-20 md:mx-40">
-                <InputBox />
+            <div className="mx-8 md:mx-40">
+                <ChatInterface user={user} selectedPodcast={podcast} />
             </div>
         </div>
     );

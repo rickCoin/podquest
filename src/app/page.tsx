@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import HeroSection from "./components/HeroSection";
 import { HERO_SECTION_TEXT } from "./constant";
-import SignInButton from "./components/SignInButton";
+import SignInButton from "./components/buttons/SignInButton";
 import { useRouter } from "next/navigation";
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { auth } from "./firebase/config";
