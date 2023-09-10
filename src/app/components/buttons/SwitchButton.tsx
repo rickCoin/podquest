@@ -4,18 +4,31 @@ import { faRepeat } from "@fortawesome/free-solid-svg-icons";
 
 interface SwitchButtonProps {
     text?: string;
+    selected: boolean;
     onClick: () => void;
+    left: boolean;
 }
 
-const SwitchButton: React.FC<SwitchButtonProps> = ({ text, onClick }) => {
+const SwitchButton: React.FC<SwitchButtonProps> = ({
+    text,
+    selected,
+    onClick,
+    left,
+}) => {
     return (
         <div>
             <button
-                className="w-16 h-8 rounded-xl border border-highlight1"
+                className={`w-auto h-8 px-2 border border-highlight1 ${
+                    selected ? "bg-highlight1" : "bg-transparent"
+                } ${left ? "rounded-l-lg" : "rounded-r-lg"}`}
                 onClick={onClick}
             >
-                <div className="text-sm text-highlight1 hover:text-primary">
-                    <FontAwesomeIcon icon={faRepeat} />
+                <div
+                    className={`text-xs md:text-sm ${
+                        selected ? "text-primary" : "text-highlight1"
+                    } hover:text-primary`}
+                >
+                    {text}
                 </div>
             </button>
         </div>

@@ -1,21 +1,35 @@
 import React from "react";
 import Image from "next/image";
+import { isStringInPodcastList } from "./utils/matchPodcastTool";
 
 interface PodBlockProps {
     onClick: () => void;
-    label?: string;
+    selected: boolean;
+    label: string;
     image_url?: string;
 }
 
-const PodBlock: React.FC<PodBlockProps> = ({ onClick, label, image_url }) => {
+const PodBlock: React.FC<PodBlockProps> = ({
+    onClick,
+    selected,
+    label,
+    image_url,
+}) => {
+    const emptyPod = !isStringInPodcastList(label);
     return (
         <div>
             <button
                 onClick={onClick}
-                className="text-sm bg-white w-16 h-16 my-4 md:text-2xl md:w-32 md:h-32 md:my-20 rounded-xl font-bold
-                 hover:text-primary"
+                className={`text-sm bg-white w-16 h-16 my-4 border-4 border-transparent 
+                            rounded-xl font-bold hover:text-primary hover:border-primary
+                            md:text-2xl md:w-32 md:h-32 md:my-20 md:border-8
+                            ${
+                                selected
+                                    ? "border-primary"
+                                    : "border-transparent"
+                            }`}
             >
-                {label && label}
+                {emptyPod && label}
                 {image_url && (
                     <Image
                         className="rounded-xl"

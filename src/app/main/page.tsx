@@ -9,6 +9,8 @@ import { useRouter } from "next/navigation";
 import Header from "../components/Header";
 import { User } from "firebase/auth";
 import { PODCAST_LIST } from "../constant";
+import { isStringInPodcastList } from "../components/utils/matchPodcastTool";
+
 export default function Main() {
     const router = useRouter();
     const [user, setUser] = useState<User>();
@@ -26,7 +28,6 @@ export default function Main() {
             }
         });
     }, [router]);
-
     return (
         <div className="bg-dark min-h-screen overflow-auto">
             <title>PodQuest</title>
@@ -39,6 +40,8 @@ export default function Main() {
             >
                 <PodBlock
                     image_url="/ted_talks_daily.png"
+                    label={PODCAST_LIST.TED_TALK_DAILY}
+                    selected={PODCAST_LIST.TED_TALK_DAILY === podcast}
                     onClick={() => {
                         console.log(
                             `select clicked: ${PODCAST_LIST.TED_TALK_DAILY}`
@@ -48,6 +51,8 @@ export default function Main() {
                 />
                 <PodBlock
                     image_url="/not_just_design_icon.png"
+                    label={PODCAST_LIST.NOT_JUST_DESIGN}
+                    selected={PODCAST_LIST.NOT_JUST_DESIGN === podcast}
                     onClick={() => {
                         console.log(
                             `select clicked: ${PODCAST_LIST.NOT_JUST_DESIGN}`
@@ -57,12 +62,14 @@ export default function Main() {
                 />
                 <PodBlock
                     label="Coming Soon"
+                    selected={"Coming Soon" === podcast}
                     onClick={() => {
                         console.log("PodBlock clicked");
                     }}
                 />
                 <PodBlock
                     label="Coming Soon"
+                    selected={"Coming Soon" === podcast}
                     onClick={() => {
                         console.log("PodBlock clicked");
                     }}
