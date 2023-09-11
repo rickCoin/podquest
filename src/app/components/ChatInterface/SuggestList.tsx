@@ -7,9 +7,12 @@ interface SuggestListProps {
 
 const SuggestList: React.FC<SuggestListProps> = ({ inputs, setValue }) => {
     return (
-        <div className="flex flex-col md:flex-row h-40 my-4 gap-4 overflow-y-auto">
+        <div
+            className="flex flex-col md:flex-row h-40 my-4 gap-4 
+            overflow-auto scrollbar-thin scrollbar-thumb-highlight1"
+        >
             {inputs.map((input, index) => (
-                <div key={index} className="flex items-center">
+                <div key={index} className="flex items-center mx-4">
                     <SuggestButton
                         text={input}
                         onClick={() => setValue(input)}

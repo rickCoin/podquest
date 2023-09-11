@@ -28,6 +28,10 @@ export default function Main() {
             }
         });
     }, [router]);
+    console.log(
+        "PODCAST_LIST.TED_TALK_DAILY === podcast: ",
+        PODCAST_LIST.TED_TALK_DAILY === podcast
+    );
     return (
         <div className="bg-dark min-h-screen overflow-auto">
             <title>PodQuest</title>
@@ -79,7 +83,7 @@ export default function Main() {
             <div className="mx-8 md:mx-40">
                 <PodIntro selectedPodcast={podcast} />
             </div>
-            <div className="mx-8 md:mx-40">
+            <div className="mx-8 md:mx-40 bg-dark2 p-4 rounded-2xl">
                 <ChatInterface user={user} selectedPodcast={podcast} />
             </div>
         </div>

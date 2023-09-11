@@ -16,11 +16,13 @@ const PodBlock: React.FC<PodBlockProps> = ({
     image_url,
 }) => {
     const emptyPod = !isStringInPodcastList(label);
+
+    console.log(`selected: ${selected}, label: ${label}`);
     return (
         <div>
             <button
                 onClick={onClick}
-                className={`text-sm bg-white w-16 h-16 my-4 border-4 border-transparent 
+                className={`text-sm bg-white w-16 h-16 my-4 border-4
                             rounded-xl font-bold hover:text-primary hover:border-primary
                             md:text-2xl md:w-32 md:h-32 md:my-20 md:border-8
                             ${

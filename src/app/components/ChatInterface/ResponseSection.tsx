@@ -11,7 +11,7 @@ interface ResponseSectionProps {
 
 const ResponseSection: React.FC<ResponseSectionProps> = ({ ans, source }) => {
     return ans.trim() ? (
-        <div className="flex h-auto p-4 gap-8 bg-primary text-highlight1">
+        <div className="flex h-auto p-4 gap-8 bg-dark text-highlight1">
             <Image
                 className="w-4 h-4 md:w-6 md:h-6"
                 height={280}
