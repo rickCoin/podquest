@@ -17,14 +17,14 @@ const PodIntro: React.FC<PodIntroProps> = ({ selectedPodcast }) => {
     const selectedPodcastMeta =
         podcastMeta[`${selectedPodcast as keyof typeof podcastMeta}`];
     return (
-        <div className="overflow-auto scrollbar-thin scrollbar-thumb-dark scrollbar-track-highlight">
+        <div>
             <div>
                 <h1 className="my-4 text-xl md:text-3xl text-secondary font-bold text-center">
                     {selectedPodcastMeta.name}
                 </h1>
             </div>
 
-            <div className="flex">
+            <div className="flex my-4">
                 <SwitchButton
                     onClick={() => setShowSummary(!showSummary)}
                     selected={showSummary}

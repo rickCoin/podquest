@@ -10,6 +10,8 @@ interface Source {
     url: string;
 }
 const URL = process.env.NEXT_PUBLIC_API_URL;
+// const URL = "http://127.0.0.1:8081";
+
 const END_POINT = "/qa_chat";
 
 async function qaChatAPI(
